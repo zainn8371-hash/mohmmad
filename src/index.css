@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    --bg-obsidian: #070708;
+    --bg-charcoal: #0e0f12;
+    --bg-surface: #14161a;
+    --accent-gold: #c9a96e;
+    --accent-gold-bright: #dfc38e;
+    --text-silver: #e6e8ec;
+    --text-muted: #9aa0ab;
+  }
+
+  html {
+    background-color: var(--bg-obsidian);
+    color: var(--text-silver);
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    width: 100%;
+  }
+
+  body,
+  #root {
+    background-color: var(--bg-obsidian);
+    color: var(--text-silver);
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Metallic hairline divider */
+.hairline-metallic {
+  border-color: rgba(214, 218, 226, 0.11);
+}
+
+.hairline-gold {
+  border-color: rgba(201, 169, 110, 0.35);
+}
+
+/* Subtle luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070708;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #23262d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a96e;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
